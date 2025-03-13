@@ -13,6 +13,7 @@ from linebot.v3.webhooks import MessageEvent, AudioMessageContent
 import os
 import requests
 from pydub import AudioSegment
+import subprocess
 
 # 設定你的 LINE Bot Channel Token 和 Secret
 LINE_CHANNEL_ACCESS_TOKEN = "hh8zCFd+m99yTw8Cdm4pr22jJndsvc5nx/IkP4uUfCEqzoaIM85+LxIsUF6lqL2cFSpYx0c+SSXoXl3n4ql1ES4fLS+BhkZsVWA1yssaSXdOUb2gxBiuF0TH+jSs9o4DtwMmgDZgseH2WymlLtHGugdB04t89/1O/w1cDnyilFU="
@@ -53,17 +54,26 @@ def handle_audio_message(event):
     response = requests.get(url, headers=headers)
     
     # 儲存音檔（LINE 音檔為 .m4a 格式）
-    audio_path = f"audio_{message_id}.m4a"
+    audio_path = f"input.m4a"
     with open(audio_path, "wb") as f:
         f.write(response.content)
     
     # 轉換音檔為 .wav 格式
-    wav_path = f"audio_{message_id}.wav"
+    wav_path = f"input.wav"
     audio = AudioSegment.from_file(audio_path, format="m4a")
     audio.export(wav_path, format="wav")
-    
-    # 這裡可以加上 Whisper 轉錄音檔的功能
-    response_text = "Recording completed, converted to wav!"
+
+    # 執行 Whisper 轉錄指令並獲取轉錄結果
+    result = subprocess.run(["whisper", wav_path, "--model", "small", "--language", "Chinese"], capture_output=True, text=True)
+
+    # 提取 Whisper 執行結果中的轉錄文字
+    transcript = result.stdout.strip()
+
+    # 如果轉錄成功，返回轉錄文字；若轉錄失敗則返回錯誤訊息
+    if transcript:
+        response_text = f"轉錄結果：\n{transcript}"
+    else:
+        response_text = "轉錄失敗，請檢查音檔格式或內容。"
     
     # 回覆用戶
     line_bot_api.reply_message(

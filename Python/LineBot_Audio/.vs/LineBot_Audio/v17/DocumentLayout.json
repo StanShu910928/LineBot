@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\Class_Project\\Python\\LineBot_Audio\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\Class_Project\\Python\\LineBot\\Python\\LineBot_Audio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8794150C-2E84-499E-9E13-902E82F9AFFA}|LineBot_Audio.pyproj|C:\\Users\\user\\Desktop\\Class_Project\\Python\\LineBot_Audio\\LineBot_Audio.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{8794150C-2E84-499E-9E13-902E82F9AFFA}|LineBot_Audio.pyproj|C:\\Users\\user\\Desktop\\Class_Project\\Python\\LineBot\\Python\\LineBot_Audio\\LineBot_Audio.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{8794150C-2E84-499E-9E13-902E82F9AFFA}|LineBot_Audio.pyproj|solutionrelative:LineBot_Audio.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "LineBot_Audio.py",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Class_Project\\Python\\LineBot_Audio\\LineBot_Audio.py",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Class_Project\\Python\\LineBot\\Python\\LineBot_Audio\\LineBot_Audio.py",
               "RelativeDocumentMoniker": "LineBot_Audio.py",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Class_Project\\Python\\LineBot_Audio\\LineBot_Audio.py",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Class_Project\\Python\\LineBot\\Python\\LineBot_Audio\\LineBot_Audio.py",
               "RelativeToolTip": "LineBot_Audio.py",
-              "ViewState": "AgIAADQAAAAAAAAAAAAgwEEAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAkwFMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2025-03-13T02:44:56.205Z",
               "EditorCaption": ""
