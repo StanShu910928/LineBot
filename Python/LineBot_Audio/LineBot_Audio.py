@@ -14,6 +14,7 @@ import os
 import requests
 from pydub import AudioSegment
 import subprocess
+import re
 
 # 設定你的 LINE Bot Channel Token 和 Secret
 LINE_CHANNEL_ACCESS_TOKEN = "hh8zCFd+m99yTw8Cdm4pr22jJndsvc5nx/IkP4uUfCEqzoaIM85+LxIsUF6lqL2cFSpYx0c+SSXoXl3n4ql1ES4fLS+BhkZsVWA1yssaSXdOUb2gxBiuF0TH+jSs9o4DtwMmgDZgseH2WymlLtHGugdB04t89/1O/w1cDnyilFU="
@@ -68,12 +69,14 @@ def handle_audio_message(event):
 
     # 提取 Whisper 執行結果中的轉錄文字
     transcript = result.stdout.strip()
+ # 使用正則表達式去掉時間戳
+    clean_transcript = re.sub(r"\[.*?\]", "", transcript)
 
     # 如果轉錄成功，返回轉錄文字；若轉錄失敗則返回錯誤訊息
-    if transcript:
-        response_text = f"轉錄結果：\n{transcript}"
+    if clean_transcript:
+        response_text = f"{clean_transcript.strip()}"
     else:
-        response_text = "轉錄失敗，請檢查音檔格式或內容。"
+        response_text = "Fail"
     
     # 回覆用戶
     line_bot_api.reply_message(
