@@ -4,22 +4,16 @@ aiosignal == 1.3.2
 annotated-types == 0.7.0
 async-timeout == 5.0.1
 attrs == 25.2.0
-blinker @ file:///croot/blinker 1737448712839/work
 certifi == 2025.1.31
 charset-normalizer == 3.4.1
-click @ file:///croot/click 1698129818524/work
 Deprecated == 1.2.18
 filelock == 3.17.0
-Flask @ file:///croot/flask 1737454301388/work
 frozenlist == 1.5.0
 fsspec == 2025.3.0
 future == 1.0.0
 idna == 3.10
-itsdangerous @ file:///croot/itsdangerous 1716533342745/work
-Jinja2 @ file:///croot/jinja2_1741710853181/work
 line-bot-sdk == 3.16.2
 11vmlite == 0.44.0
-MarkupSafe @ file:///croot/markupsafe_1738584053160/work
 more-itertools == 10.6.0
 mpmath == 1.3.0
 multidict == 6.1.0
